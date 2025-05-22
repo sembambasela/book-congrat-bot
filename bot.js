@@ -1,6 +1,8 @@
 
 //Environment Setups & Imports
 require('dotenv').config();
+const connectDB = require('./utils/db');
+const Book = require('./models/Book');
 const fs = require('fs');
 const path = require('path'); // Added for better path handling
 const { Client, GatewayIntentBits } = require('discord.js');
@@ -25,7 +27,8 @@ for (const file of commandFiles) {
   client.commands.set(command.name, command);
 }
 
-client.on('ready', () => {
+client.on('ready', async () => {
+  await connectDB(); 
   console.log(`Logged in as ${client.user.tag}!`);
   console.log(`Loaded ${client.commands.size} commands!`); // Verify loading
 });
