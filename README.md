@@ -8,9 +8,9 @@ A Discord bot that celebrates when users finish reading books.
    git clone https://github.com/sembambasela/book-congrat-bot.git
 2. **Install dependencies**:
   ```bash
-    npm install
+    npm install```
   ```bash
-    npm install discord.js dotenv
+    npm install discord.js dotenv ```
 3. **Features**:
 - !finished [book title]: 
 Lets users mark a book as completed
