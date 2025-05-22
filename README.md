@@ -1,4 +1,4 @@
-# 📚 Book Celebration Bot
+\# 📚 Book Celebration Bot
 
 A Discord bot that celebrates when users finish reading books.
 
@@ -11,9 +11,4 @@ A Discord bot that celebrates when users finish reading books.
     npm install```
   ```bash
     npm install discord.js dotenv ```
-3. **Features**:
-- !finished [book title]: 
-Lets users mark a book as completed
-Triggers congratulations message
-- !readingstats: 
-Shows user's reading statistics
+
