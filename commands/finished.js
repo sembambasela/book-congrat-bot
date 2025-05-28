@@ -1,6 +1,6 @@
 // commands/finished.js
 const Book = require('../models/Book');
-var index; 
+
 module.exports = {
   name: "finished",
   description: "Log a book you've completed",
@@ -13,13 +13,13 @@ module.exports = {
     
     //TODO: Add database logic here later
     const book = new Book({
-      userId: message.author.id,
+      userId: message.author.globalName,
       title: args.join(' '),
     });
     
     try {
       await book.save(); 
-      message.reply(`:tada: Congrats on finishing **${bookTitle}**! Saved to your reading log. :tada:`);
+      message.reply(`:tada: Congrats on finishing **${bookTitle}**! Saved to your reading log ${message.author.globalName}. :tada:`);
     } catch(err) {
       console.error(err); 
       message.reply('Failed to save the book'); 
