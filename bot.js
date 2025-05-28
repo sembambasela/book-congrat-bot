@@ -4,6 +4,7 @@ require('dotenv').config();
 const fs = require('fs');
 const path = require('path'); // Added for better path handling
 const { Client, GatewayIntentBits } = require('discord.js');
+const connectDB = require('_DATABASE_FILE');
 
 const client = new Client({
   intents: [
@@ -25,7 +26,8 @@ for (const file of commandFiles) {
   client.commands.set(command.name, command);
 }
 
-client.on('ready', () => {
+client.on('ready',async () => {
+  await connectDB();
   console.log(`Logged in as ${client.user.tag}!`);
   console.log(`Loaded ${client.commands.size} commands!`); // Verify loading
 });
