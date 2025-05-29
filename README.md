@@ -22,41 +22,47 @@ A Discord bot that celebrates reading achievements by tracking finished books an
 
 ### Installation
 1. Clone the repository
-   ```bash
+ ```bash
    git clone https://github.com/your-username/book-congrat-bot.git
    cd book-congrat-bot
+```
 
 2. Install dependencies
 
-bash
+```bash
 npm install
-
+```
 3. Set up environment variables
 
-bash
+```bash
 cp .env.example .env
+```
 Edit .env with your credentials:
 
-env
+```env
 DISCORD_TOKEN=your_bot_token_here
 MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/dbname?retryWrites=true&w=majority
-
+```
 ## 🛠️ Usage
 Start the bot:
 
-bash
+```bash
 node bot.js
+```
+
 ## Available Commands
-Command	Description	Example
-!finished	Log a completed book	!finished Dune
-!log	View reading history	!log
-!stats	Show reading statistics	!stats
+| Command       | Description               | Example          |
+|---------------|---------------------------|------------------|
+| `!finished`   | Log a completed book      | `!finished Dune` |
+| `!log`        | View reading history      | `!log`           |
+| `!stats`	    | Show reading statistics	  | `!stats`         |
 
 ## 📦 Dependencies
-Package	Version	Purpose
-discord.js	^14.19.3	Discord API wrapper
-mongoose	^8.15.0	MongoDB ODM
-dotenv	^16.5.0	Environment variables
+| Package    | Version   | Purpose               |
+|------------|-----------|-----------------------|
+| discord.js | ^14.19.3  | Discord API wrapper   |
+| mongoose   | ^8.15.0	 | MongoDB ODM           |
+| dotenv	   | ^16.5.0	 | Environment variables |
 
 ## 🤝 Contributing
 Fork the project
@@ -69,6 +75,6 @@ Push to the branch (git push origin feature/AmazingFeature)
 
 Open a Pull Request
 
-📬 Contact
-LinkedIn - Semba Mbasela 
+## 📬 Contact 
+LinkedIn - Semba Mbasela \
 Email - mbaselasemba@gmail.com
