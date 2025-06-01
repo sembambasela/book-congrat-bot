@@ -6,15 +6,21 @@ module.exports = {
   description: "Log a book you've completed",
   async execute(message, args) {
 
+    //Creating variables for a book
+    //RegEx rule for a book title and storing of the book name and book author
     const bookTitle = args.join(" ");
-    if (!bookTitle) {
-      return message.reply("Please specify a book title! Example: `!finished The Hobbit`");
-    }
+    const bookRule = /^(.+?)\s+[bB]y\s+(.+)$/;
+    const [bookName, bookAuthor] = bookTitle.split(/\s+[bB]y\s+/);
     
-    //TODO: Add database logic here later
+    if (!bookRule.test(bookTitle)) {
+      return message.reply("Please specify a book title! Example: `!finished The Hobbit by J.R.R Tolkien` A book title must have a book name and author.");
+    }    
+    
+    //Creating a new book instance to be inserted into database
     const book = new Book({
       userId: message.author.globalName,
-      title: args.join(' '),
+      title: bookName.trim(),
+      author: bookAuthor.trim(),
     });
     
     try {
